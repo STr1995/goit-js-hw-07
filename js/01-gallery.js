@@ -50,9 +50,10 @@ function onImageModalClick(e) {
         return;
     };
 
+    const modalImg = e.target.dataset.source;
+
     const instance = basicLightbox.create(`
-    <img src="${e.target.dataset.source}" alt="${e.target.alt}">
-`);
+    <img src="${modalImg}">`);
     
     galleryList.addEventListener('keydown', onEscKeyPress);
         function onEscKeyPress(e) {
@@ -60,8 +61,7 @@ function onImageModalClick(e) {
             instance.close()
         };
     
-}
+    };
+
     instance.show();
 };
-
-
